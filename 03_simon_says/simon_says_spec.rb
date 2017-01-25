@@ -73,6 +73,7 @@ describe "Simon says" do
     it "tells us the first word of 'oh dear' is 'oh'" do
       expect(first_word("oh dear")).to eq("oh")
     end
+
   end
 
   describe "titleize" do
@@ -90,6 +91,10 @@ describe "Simon says" do
 
     it "does capitalize 'little words' at the start of a title" do
       expect(titleize("the bridge over the river kwai")).to eq("The Bridge over the River Kwai")
+    end
+
+    it "does capitalize 'little words' at the start of a title and accounts for other possible space char's" do
+      expect(titleize("the_bridge_over_the_river_kwai")).to eq("The_Bridge_over_the_River_Kwai")
     end
   end
 
