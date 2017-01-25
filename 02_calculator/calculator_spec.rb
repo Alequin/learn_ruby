@@ -77,23 +77,61 @@ end
 # once the above tests pass,
 # write tests and code for the following:
 
-describe "#multiply" do
+describe "multiply" do
 
-  it "multiplies two numbers"
+  it "multiplies two numbers" do
+    expect(multiply(2,2)).to eq(4)
+  end
 
-  it "multiplies several numbers"
-  
+  #based on the describtion of the method I would only expect There
+  #to be two parameters the name of this test (I have written the test)
+  #but it was pre-named) suggests more than two numbers can be given as
+  #parameters. Following this logic I have done that
+  it "multiplies several numbers" do
+    expect(multiply(2,2,2,2)).to eq(16)
+  end
+
+  it "no values given" do
+    expect(multiply()).to eq(0)
+  end
+
+  it "one value given" do
+    expect(multiply(5)).to eq(5)
+  end
+
 end
 
-describe "#power" do
-  it "raises one number to the power of another number"
+describe "power" do
+
+  it "raises one number to the power of another number (2 to power 2) " do
+    expect(power(2,2)).to eq(4)
+  end
+
+  it "raises one number to the power of another number (4 to power 6) " do
+    expect(power(4,6)).to eq(4096)
+  end
+
+  it "raises one number to the power of another number (0 to power 10) " do
+    expect(power(0,10)).to eq(0)
+  end
+
 end
 
 # http://en.wikipedia.org/wiki/Factorial
-describe "#factorial" do
-  it "computes the factorial of 0"
-  it "computes the factorial of 1"
-  it "computes the factorial of 2"
-  it "computes the factorial of 5"
-  it "computes the factorial of 10"
+describe "factorial" do
+  it "computes the factorial of 0" do
+    expect(factorial(0)).to eq(1)
+  end
+  it "computes the factorial of 1"do
+    expect(factorial(1)).to eq(1)
+  end
+  it "computes the factorial of 2"do
+    expect(factorial(2)).to eq(2)
+  end
+  it "computes the factorial of 5"do
+    expect(factorial(5)).to eq(120)
+  end
+  it "computes the factorial of 10"do
+    expect(factorial(10)).to eq(3_628_800)
+  end
 end
