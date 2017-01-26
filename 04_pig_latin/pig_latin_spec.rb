@@ -19,7 +19,15 @@
 
 require "pig_latin"
 
-describe "#translate" do
+describe "splitWordsUp" do
+
+  it "splits up words" do
+    expect(splitWordsUp("cake and pie")).to eq(["cake","and","pie"])
+  end
+
+end
+
+describe "translate" do
 
   it "translates a word beginning with a vowel" do
     s = translate("apple")
